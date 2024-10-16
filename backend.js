@@ -10,16 +10,6 @@ const Filme = mongoose.model("Filme", mongoose.Schema({
     sinopse: { type: String }
 }))
 
-let filmes = [
-    {
-        titulo: "Trem-Bala",
-        sinopse: "Em um trem-bala indo rapidamente de Tóquio a Morioka, cinco assassinos profissionais descobrem que possuem o mesmo objetivo."
-    },
-    {
-        titulo: "Drive",
-        sinopse: "Um habilidoso motorista, que é dublê em cenas de perseguição em filmes de Hollywood, também usa seu talento no volante para ser piloto de fuga em assaltos. Seu estilo de vida solitário e misterioso começa a mudar no momento em que se apaixona por uma mulher cujo marido está prestes a sair da prisão. Enquanto isso, o chefe da sua oficina mecânica está tentando organizar uma corrida com dinheiro sujo."
-    }
-]
 app.get('/filmes', async(req, res) => {
     const filmes = await Filme.find()
     res.json(filmes)
